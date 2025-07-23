@@ -33,3 +33,6 @@ pygithub
 exa-py
 pgvector
 chromadb
+qdrant-client[fastembed]
+pyPDF2
+chonkie
