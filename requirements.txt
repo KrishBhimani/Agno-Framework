@@ -36,3 +36,5 @@ chromadb
 qdrant-client[fastembed]
 pyPDF2
 chonkie
+psycopg
+mcp
