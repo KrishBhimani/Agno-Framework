@@ -30,3 +30,11 @@ langchain_groq
 googlesearch-python 
 pycountry
 pygithub
+exa-py
+pgvector
+chromadb
+qdrant-client[fastembed]
+pyPDF2
+chonkie
+psycopg
+mcp
