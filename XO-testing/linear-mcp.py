@@ -1,49 +1,10 @@
-# from mcp import ClientSession, StdioServerParameters
-# from mcp.client.stdio import stdio_client
-# import asyncio
-# from agno.agent import Agent
-# from agno.models.openai import OpenAIChat
-# from agno.tools.mcp import MCPTools, StreamableHTTPClientParams
-# import os
-# from dotenv import load_dotenv
-# load_dotenv()
-# os.environ['OPENAI_API_KEY']=os.getenv('OPENAI_API_KEY')
-# LINEAR_API_KEY = os.getenv('LINEAR_API_KEY')
-
-
-# async def create_mcp_agent(session):
-
-#     mcp_tools=MCPTools(session=session)
-#     await mcp_tools.initialize()
-#     return Agent(model=OpenAIChat(id="gpt-4o"), tools=[mcp_tools],instructions=["you are a Linear Task Management agent with Model Context Protocal tool of linear"],
-#                 markdown=True, show_tool_calls=True)
-
-
-# async def runagent(message:str):
-#     server_params=StdioServerParameters(
-#         command="npx",
-#         args=["-y", "mcp-remote", "https://mcp.linear.app/sse"],
-#         env={"LINEAR_API_KEY": LINEAR_API_KEY}
-#     )
-#     try:
-#         async with stdio_client(server_params) as (read,write):
-#             async with ClientSession(read,write) as session:
-#                 agent=await create_mcp_agent(session)
-#                 await agent.aprint_response(message, stream="True")
-#     except Exception as e:
-#         print(f"Error {e}")
-#     finally:
-#         await asyncio.sleep(0.1)
-
-# if __name__=="__main__":
-#     try:
-#         asyncio.run(runagent("Create a active issue named 'Agno-Linear Connection Failed'in team XO"))
-#     except Exception as e:
-#         print(f"Error {e}")
 
 import os
 import asyncio
 from dotenv import load_dotenv
+import subprocess
+import signal
+import platform
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
 from agno.agent import Agent
