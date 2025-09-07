@@ -38,3 +38,4 @@ pyPDF2
 chonkie
 psycopg
 mcp
+mem0ai
